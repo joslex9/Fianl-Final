@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Tabla con Bootstrap</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Proyectos Semillero de Investigacion </a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <button id="consultarProyectos" class="btn btn-primary">Consultar proyectos</button>
+        <button id="regresar" class="btn btn-primary">Regresar</button>
+        <table id="tablaProyectos" class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre del Proyecto</th>
+                    <th>fecha Inicio</th>
+                    <th> fecha Final</th>
+                    <th> descripcion</th>
+                    <th> Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("consultarProyectos").addEventListener("click", function () {
+            let endpoint = '/FiltroProyecto';
+
+            // Recuperar el códigoSemillero almacenado en sessionStorage
+            var codigoSemillero = sessionStorage.getItem('codigoSemillero');
+            console.log("enviado a axius" + codigoSemillero);
+            axios.get(endpoint + '?idSemillero=' + encodeURIComponent(codigoSemillero))
+                .then(function (response) {
+                    let data = response.data;
+
+                    let tablaProyectos = document.getElementById("tablaProyectos").getElementsByTagName("tbody")[0];
+
+                    // Limpia el contenido actual de la tabla
+                    tablaProyectos.innerHTML = '';
+
+                    // Itera a través de los datos y agrega filas a la tabla
+                    for (let key in data) {
+                        if (data.hasOwnProperty(key)) {
+                            let proyectos = data[key];
+                            let row = tablaProyectos.insertRow();
+                            let cellCodigoP = row.insertCell(0);
+                            let cellNombreP = row.insertCell(1);
+                            let cellfechaInicioP = row.insertCell(2);
+                            let cellfechaFinalP = row.insertCell(3);
+                            let celldescripcionP = row.insertCell(4);
+                            let DetallesP = row.insertCell(5);
+                            
+                            cellCodigoP.textContent = proyectos.codProyecto;
+                            cellNombreP.textContent = proyectos.nombreProyecto;
+                            cellfechaInicioP.textContent = proyectos.fechaInicio;
+                            cellfechaFinalP.textContent = proyectos.fechaFinal;
+                            celldescripcionP.textContent = proyectos.descripcion;
+
+                            // Crear enlace para detalles y almacenar el código en sessionStorage
+                        let detallesLink = document.createElement("a");
+                        detallesLink.textContent = "Detalles";
+                        detallesLink.href = "Proyectos";  // Página destino
+                        detallesLink.onclick = function () {
+                            sessionStorage.setItem('codProyecto', proyectos.codProyecto);
+                            console.log("enviado" +proyectos.codProyecto)
+                        };
+
+                        detallesLink.classList.add("btn", "btn-info");
+
+                        DetallesP.appendChild(detallesLink);
+                        }
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        });
+        //Regresar
+        document.getElementById("regresar").addEventListener("click", function () {
+           // Redirigir a otra página Semilleros HTML
+           window.location.href = '/';
+        });
+
+    </script>
+
+
+</body>
+
+</html>
