@@ -7,19 +7,32 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Tabla con Bootstrap</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+ 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Detalles Proyectos de Investigacion</a>
-        </div>
-    </nav>
+    <header>
+        <img class="logo" src="../static/img/escudo.png" alt="Logo universidad" id="logo">
+        <h1 class="encabezado">SEGUIMIENTO DE SEMILLERO</h1>
+    
+    </header>
 
-    <div class="container mt-4">
-        <button id="consultarDetalles" class="btn btn-primary">Detalles</button>
+    <ul>
+        <div class="palabra"></div>
+        
+        <div class="linea"></div>
+    </ul>
+    <div class="center-container"><button id="consultarDetalles" class="btn btn-primary">Detalles</button>
         <button id="regresar" class="btn btn-primary">Regresar</button>
+        <button id="pdff" class="imprimir-btn">
+            <img  class="impresora" src="../static/img/Descargar.png" alt="Impresora"> PDF
+        </button>
+    </div>
+    
+
+    <div id="pof" class="container mt-4">
         <table id="tablaDetalles" class="table table-striped mt-4">
             <thead>
                 <tr>
@@ -32,6 +45,60 @@
 
             </tbody>
         </table>
+        
+        <table class="sheet">
+            <tr>
+                <td colspan="2">
+                    <h4>SEGUIMIENTO DE LA ACTIVIDAD INVESTIGATIVA DE SEMILLEROS DE INVESTIGACION</h4>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="section">
+                        <p>Observaciones Generales:</p>
+                    <textarea rows="5" cols="75" placeholder=""></textarea>
+                    </div>
+
+        
+                </td>
+               
+            </tr>
+            <td>
+                <h5>Lider del Grupo</h5>
+                <label class="form-label" for="firma">Firma Líder:</label>
+                <input class="form-input" type="text" id="firma" name="firma" required>
+            </td>
+            <tr>
+                <td>
+                    <div class="section-box">
+                        <h4>Registro de Trámite</h4>
+                        <label class="form-label" for="nombre">Nombre:</label>
+                        <input class="form-input" type="text" id="nombre" name="nombre" required>
+                        <label class="form-label" for="fecha">Fecha:</label>
+                        <input class="form-input" type="text" id="fecha" name="fecha" required>
+                        <label class="form-label" for="firma">Firma:</label>
+                        <input class="form-input" type="text" id="firma" name="firma" required>
+                    </div>
+                </td>
+                <td>
+                    
+                    <div class="section-box">
+                        <h4>Validación del Trámite</h4>
+                        <table class="signature-table">
+                            
+                              <br><br><br><br><br><br>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="section-divider"></td>
+            </tr>
+        </table>
+
+
+
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
@@ -117,6 +184,10 @@
            window.location.href = 'Semillero';
         });
     </script>
+    <script src="../static/js/scrip.js"></script>
+    <script src="../static/js/pdf.js"></script>
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
 </body>
 
 </html>
