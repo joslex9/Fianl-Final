@@ -9,16 +9,20 @@ class GInvestigacion(bd.Model):
     nombre = bd.Column(bd.String(50))
     lider = bd.Column(bd.String(50))
     lineaInvestigacion = bd.Column(bd.String(50))
+    codigoColciencias=bd.Column(bd.String(50))
+    categoriaColciencias=bd.Column(bd.String(50))
     # Relación unidireccional con profesor_programa
     profesor_programaPk =bd.Column(bd.Integer,bd.ForeignKey("tblProfesorPrograma.idProfesorPrograma"))
     
      
     
     #Constructor
-    def __init__(self,nombre,lider,lineaInvestigacion,idProfesorFk):
+    def __init__(self,nombre,lider,lineaInvestigacion,codigoColciencias,categoriaColciencias,idProfesorFk):
         self.nombre=nombre
         self.lider=lider
         self.lineaInvestigacion=lineaInvestigacion
+        self.codigoColciencias=codigoColciencias
+        self.categoriaColciencias=categoriaColciencias
         self.idProfesorFk=idProfesorFk
 
 
@@ -30,4 +34,4 @@ with app.app_context():
 #Descerializacion
 class GrupoInvestigacion_Schema(ma.Schema):
     class Meta:
-        fields=("nombre","lider","lineaInvestigacion","idProfesorFk")
+        fields=("nombre","lider","lineaInvestigacion","codigoColciencias","categoriaColciencias","idProfesorFk")
