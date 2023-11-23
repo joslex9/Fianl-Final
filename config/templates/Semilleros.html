@@ -7,39 +7,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Tabla con Bootstrap</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <style>
-        /* Estilos personalizados */
-        .centrar-texto {
-            text-align: center;
-        }
-
-        .negrita {
-            font-weight: bold;
-        }
-    </style>
-    <style>
-        /* Estilos personalizados */
-        .centrar-texto {
-            text-align: center;
-        }
-
-        .negrita2 {
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/css/style.css">
+   
 </head>
 
 <body>
 
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">FORMATO PRESENTACIÓN DE INFORME DE SEMILLEROS DE INVESTIGACIÓN </a>
-        </div>
-    </nav>
 
-    <div class="container mt-4 text-center">
+    <header>
+        <img class="logo" src="../static/img/escudo.png" alt="Logo universidad" id="logo">
+        <h1 class="encabezado">SEGUIMIENTO DE SEMILLERO</h1>
+    
+    </header>
+
+    <ul>
+        <div class="palabra"></div>
+        <div class="linea"></div>
+    </ul>
+    
+    <div id="pof">
         <div class="container mt-4 text-center">
-            <label for="" class="centrar-texto negrita">INFORMACION GENERAL</label>
+            <label for="informacionGeneral" class="centrar-texto negrita">INFORMACION GENERAL</label>
             <hr>
             <form>
                 <div class="form-group row">
@@ -49,158 +37,187 @@
                     </div>
                     <label for="staticFecha" class="col-sm-2 col-form-label">Fecha:</label>
                     <div class="col-sm-4">
-                        <input type="text" readonly class="form-control-plaintext" id="staticFecha" value="17/11/2023">
+                        <input type="text" readonly class="form-control-plaintext" id="staticFecha" value="22/11/2023">
                     </div>
                 </div>
-
             </form>
-
             <hr>
-        </div>
-
-        <div class="form-group row">
-            <label for="staticPrograma" class="col-sm-2 col-form-label">Programa:</label>
-            <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticPrograma" value="">
-            </div>
-        </div>
-        <hr>
-        <div class="form-group row">
-            <label for="staticNombreI" class="col-sm-2 col-form-label">Nombre del grupo de investigacion:</label>
-            <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticNombreI" value="">
-            </div>
-        </div>
-
-        <hr>
-
-        <form>
+    
             <div class="form-group row">
-                <label for="staticNombreS" class="col-sm-2 col-form-label">Nombre del semillero:</label>
-                <div class="col-sm-4">
-                    <input type="text" readonly class="form-control-plaintext" id="staticNombreS" value="">
-                </div>
-                <label for="staticPeriodoA" class="col-sm-2 col-form-label">Periodo Academico:</label>
-                <div class="col-sm-4">
-                    <input type="text" readonly class="form-control-plaintext" id="staticPeriodoA" value="2023-2">
+                <label for="staticPrograma" class="col-sm-2 col-form-label">Programa:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticPrograma" value="">
                 </div>
             </div>
-
-        </form>
-        <hr>
-        <div class="form-group row">
-            <label for="staticDocenteL" class="col-sm-2 col-form-label">Docente lider del semillero:</label>
-            <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticDocenteL" value="">
-            </div>
-        </div>
-        <hr>
-        <div class="form-group row">
-            <label for="staticLineaI" class="col-sm-2 col-form-label">Linea de investigacion:</label>
-            <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticLineaI" value="">
-            </div>
-        </div>
-        </form>
-        <hr>
-        <form>
+            <hr>
+    
             <div class="form-group row">
-                <label for="staticCategoriaC" class="col-sm-2 col-form-label">Categoria Colciencias:</label>
-                <div class="col-sm-4">
-                    <input type="text" readonly class="form-control-plaintext" id="staticCategoriaC" value="">
-                </div>
-                <label for="staticCodigoCol" class="col-sm-2 col-form-label">Codigo Colciencias:</label>
-                <div class="col-sm-4">
-                    <input type="text" readonly class="form-control-plaintext" id="staticCodigoCol" value="">
+                <label for="staticNombreI" class="col-sm-2 col-form-label">Nombre del grupo de investigacion:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticNombreI" value="">
                 </div>
             </div>
             <hr>
-            <div class="container">
-
-                <label for="" class="centrar-texto negrita">PRESENTACIÓN DE INFORME DE RESULTADOS (USO EXCLUSIVO DEL
-                    GRUPO DE
-                    INVESTIGACIÓN)</label>
-            </div>
-            <hr>
-        </form>
-        <table id="tablaProyectos" class="table table-striped mt-4">
-            <thead>
-                <tr>
-                    <th>Nombre del proyecto </th>
-                    <th>Objetivos del Proyecto</th>
-                    <th>Resultados Obtenidos</th>
-                    <th> Estudiantes que intervienen</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-        <hr>
-        <div class="form-group row">
-            <label for="staticObservaciones" class="col-sm-2 col-form-label">Observaciones:</label>
-            <br>
-
-            <label for="" class="centrar-texto negrita">SEGUIMIENTO DE LA ACTIVIDAD INVESTIGATIVA DE SEMILLEROS DE
-                INVESTIGACIÓN</label>
-            <br>
-            <label for="" class="centrar-texto negrita">Observaciones generales</label>
-            <hr>
-            <br>
-            <br>
-            <br>
-            <hr>
-            <label for="" class="centrar-texto negrita">USO EXCLUSIVO LÍDER DEL GRUPO</label>
-            <br>
-            <hr>
+    
             <form>
                 <div class="form-group row">
-                    <label for="staticNS" class="col-sm-2 col-form-label">Firma docente lider del
-                        semillero:</label>
+                    <label for="staticNombreS" class="col-sm-2 col-form-label">Nombre del semillero:</label>
                     <div class="col-sm-4">
-                        <input type="text" readonly class="form-control-plaintext" id="staticNS" value="">
+                        <input type="text" readonly class="form-control-plaintext" id="staticNombreS" value="">
                     </div>
-                    <label for="staticPA" class="col-sm-2 col-form-label">Manifiesto la veracidad de toda la
-                        información contemplada en el presente documento en concordancia con los requisitos solicitados
-                        y en beneficio de la Universidad Libre</label>
+                    <label for="staticPeriodoA" class="col-sm-2 col-form-label">Periodo Academico:</label>
                     <div class="col-sm-4">
-                        <input type="text" readonly class="form-control-plaintext" id="staticPA" value="">
+                        <input type="text" readonly class="form-control-plaintext" id="staticPeriodoA" value="2023-2">
                     </div>
                 </div>
-
             </form>
             <hr>
-            <label for="" class="centrar-texto negrita">USO EXCLUSIVO DEL CENTRO DE INVESTIGACIONES DE FACULTAD</label>
-            <br>
-            <hr>
-            <label for="" class="centrar-texto negrita">Registro del tramite</label>
-            <hr>
-
-        </div>
-        <label for="staticPeriodoA" class="col-sm-2 col-form-label">Validacion del tramite:</label>
-        </form>
-
-        <div class="form-group row">
-
-            <label for="staticGrupoI" class="col-sm-2 col-form-label">Nombre:</label>
-            <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticGrupoI" value="">
+    
+            <div class="form-group row">
+                <label for="staticDocenteL" class="col-sm-2 col-form-label">Docente lider del semillero:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticDocenteL" value="">
+                </div>
             </div>
-
-
-            <label for="staticGrupoI" class="col-sm-2 col-form-label">Fecha:</label>
-            <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticGrupoI" value="">
+            <hr>
+    
+            <div class="form-group row">
+                <label for="staticLineaI" class="col-sm-2 col-form-label">Linea de investigacion:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticLineaI" value="">
+                </div>
             </div>
-            <label for="staticGrupoI" class="col-sm-2 col-form-label">Firma:</label>
-
+    
+            <hr>
+    
+            <form>
+                <div class="form-group row">
+                    <label for="staticCategoriaC" class="col-sm-2 col-form-label">Categoria Colciencias:</label>
+                    <div class="col-sm-4">
+                        <input type="text" readonly class="form-control-plaintext" id="staticCategoriaC" value="">
+                    </div>
+                    <label for="staticCodigoCol" class="col-sm-2 col-form-label">Codigo Colciencias:</label>
+                    <div class="col-sm-4">
+                        <input type="text" readonly class="form-control-plaintext" id="staticCodigoCol" value="">
+                    </div>
+                </div>
+            </form>
+            <hr>
+    
+            <div class="container">
+                <label for="presentacionInforme" class="centrar-texto negrita">PRESENTACIÓN DE INFORME DE RESULTADOS (USO EXCLUSIVO DEL GRUPO DE INVESTIGACIÓN)</label>
+                <hr>
+            </div>
+    
+            <table id="tablaProyectos" class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Nombre del proyecto </th>
+                        <th>Objetivos del Proyecto</th>
+                        <th>Resultados Obtenidos</th>
+                        <th> Estudiantes que intervienen</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                </tbody>
+            </table>
+    
+            <hr>
+    
+            <div class="form-group row">
+                <label for="staticObservaciones" class="col-sm-2 col-form-label">Observaciones:</label>
+                <br>
+                <label for="seguimientoSemilleros" class="centrar-texto negrita">SEGUIMIENTO DE LA ACTIVIDAD INVESTIGATIVA DE SEMILLEROS DE INVESTIGACIÓN</label>
+                <br>
+                <label for="observacionesGenerales" class="centrar-texto negrita">Observaciones generales</label>
+                <hr>
+                <br>
+                <br>
+                <br>
+                <hr>
+                <label for="usoExclusivoLiderGrupo" class="centrar-texto negrita">USO EXCLUSIVO LÍDER DEL GRUPO</label>
+                <br>
+                <hr>
+                <form>
+                    <div class="form-group row">
+                        <label for="staticNS" class="col-sm-2 col-form-label">Firma docente lider del semillero:</label>
+                        <div class="col-sm-4">
+                            <input type="text" readonly class="form-control-plaintext" id="staticNS" value="">
+                        </div>
+                        <label for="staticPA" class="col-sm-2 col-form-label">Manifiesto la veracidad de toda la información contemplada en el presente documento en concordancia con los requisitos solicitados y en beneficio de la Universidad Libre</label>
+                        <div class="col-sm-4">
+                            <input type="text" readonly class="form-control-plaintext" id="staticPA" value="">
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <label for="usoExclusivoCentroInvestigaciones" class="centrar-texto negrita">USO EXCLUSIVO DEL CENTRO DE INVESTIGACIONES DE FACULTAD</label>
+                <br>
+                <hr>
+                <label for="registroTramite" class="centrar-texto negrita">Registro del tramite</label>
+                <hr>
+            </div>
+    
+            <label for="validacionTramite" class="col-sm-2 col-form-label">Validacion del tramite:</label>
+    
+            <div class="form-group row">
+                <label for="staticGrupoI" class="col-sm-2 col-form-label">Nombre:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticGrupoI" value="">
+                </div>
+    
+                <label for="staticGrupoII" class="col-sm-2 col-form-label">Fecha:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticGrupoII" value="">
+                </div>
+                <label for="firmaGrupo" class="col-sm-2 col-form-label">Firma:</label>
+            </div>
         </div>
-        </form>
-        <button id="consultarProyectos" class="btn btn-primary">Consultar proyectos</button>
-        <button id="regresar" class="btn btn-primary">Regresar</button>
     </div>
+    
+
+
+
+
+   <div class="center-container">
+    <button id="consultarProyectos" class="btn btn-primary">Consultar proyectos</button>
+    <button id="regresar" class="btn btn-primary">Regresar</button>
+    <button id="pdff" class="imprimir-btn">
+        <img  class="impresora" onclick="generarPDF()" src="../static/img/Descargar.png" alt="Impresora"    > PDF
+    </button>
+   </div>
+
+   <script>
+    function generarPDF() {
+        // Selecciona el elemento que deseas convertir a PDF
+        const elementoParaConvertir = document.getElementById('pof');
+
+        // Opciones de configuración para html2pdf
+        const opciones = {
+            margin: 10,
+            filename: 'documento.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        // Utiliza html2pdf para convertir el contenido a PDF
+        html2pdf(elementoParaConvertir, opciones);
+    }
+</script>
+
+
+
+
+  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    
+
+   
+
     <script>
         document.getElementById("consultarProyectos").addEventListener("click", function () {
             let endpoint = '/Detalle2';
@@ -296,18 +313,6 @@
 
                     }
 
-
-
-
-
-
-
-
-
-
-
-
-
                     //Grupo de investigacion
                     let endpoint2 = '/getGrupoI';
                     //Cargar GInvestigacion
@@ -359,7 +364,10 @@
         });
 
     </script>
-
+    <!-- <script src="../static/js/scrip.js"></script> -->
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+   
 
 </body>
 
