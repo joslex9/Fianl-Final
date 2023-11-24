@@ -38,8 +38,14 @@ semilleros_schema = SemilleroSchema(many=True)
 
 
 @app.route("/", methods=['GET'])
-def index():
+def login():
     nombre= "Login"
+    return render_template('login.html')
+
+
+@app.route("/menu", methods=['GET'])
+def index():
+    nombre= "menu"
     return render_template('index.html')
 
 

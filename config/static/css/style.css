@@ -160,6 +160,16 @@ h4,h5 {
 .signature-table th, .signature-table td {
     padding: 8px;
 }
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
 
 
 

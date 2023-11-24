@@ -1,0 +1,74 @@
+
+.contenedor{
+    width: 70%;
+    text-align: center;
+    border: 2px solid black; /* Ajusta el grosor del borde según sea necesario */
+    margin: 5px 5px 5px 5px;
+    box-sizing: border-box; 
+    
+}
+.contenedor2{
+    width: 100%;
+    text-align: center;
+    border: 2px solid black;
+    box-sizing: border-box; 
+
+}
+
+
+/* cotendedor_ 'DIV "dos"' */
+.dos{ 
+    display: flex;
+    width: 100%;
+    
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%; 
+    
+}
+/* cosa 1 y cosa 2 */
+.dos_1{
+    width: 65%;
+    
+    
+}
+.dos_2{
+    width: 35%;
+}
+.dos_1 td:nth-child(2):empty,
+.dos_2 td:empty{
+    min-width: 207px; /* Establece el ancho mínimo según sea necesario */
+}
+/* ********************************** */
+
+
+th, td {
+    border: 1px solid black;
+    padding: 12px;
+    text-align: center;
+    line-height: 2.5;
+}
+
+th {
+    background-color: #000000;
+} 
+.dos_0{
+    border: 1px solid black;
+  
+    text-align: center;
+    width: 80%;
+}
+.dos_02{
+    text-align: center;
+    width: 100%;
+}
+
+/* tres */
+.tres{
+    width: 100%;
+}
+.tres td:nth-child(2):empty{
+    min-width: 650px; /* Establece el ancho mínimo según sea necesario */
+}

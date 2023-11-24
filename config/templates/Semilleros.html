@@ -8,6 +8,7 @@
     <title>Tabla con Bootstrap</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/sty.css">
    
 </head>
 
@@ -25,12 +26,44 @@
         <div class="linea"></div>
     </ul>
     
-    <div id="pof">
-        <div class="container mt-4 text-center">
-            <label for="informacionGeneral" class="centrar-texto negrita">INFORMACION GENERAL</label>
+    <div id="contenedor">
+       
+        <div class="dos_0">
+            <h2>FORMATO PRESENTACION DE INFORME DE SEMILLEROS DE INVESTIGACION</h2>
+            <hr>
+            <h2>INFORMACION GENERAL</h2>
             <hr>
             <form>
-                <div class="form-group row">
+
+                <div class="dos">
+                    <div class="dos_1">
+                        <table>
+                            <tr>
+                                <td>Facultad:</td>
+                                <td><input type="text" readonly class="form-control-plaintext" id="staticFacultad" value=""></td>
+                            </tr>
+                            <tr>
+                                <td>Programa:</td>
+                                <td> <input type="text" readonly class="form-control-plaintext" id="staticPrograma" value=""></td>
+                            </tr>
+                        </table>
+                    </div>
+        
+                    <div class="dos_2">
+                        <table>
+                            <tr>
+                                <td>fecha</td>
+                            </tr>
+                            <tr>
+                                <td><input type="date"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+                <!-- <div class="form-group row">
                     <label for="staticFacultad" class="col-sm-2 col-form-label">Facultad:</label>
                     <div class="col-sm-4">
                         <input type="text" readonly class="form-control-plaintext" id="staticFacultad" value="">
@@ -49,17 +82,48 @@
                     <input type="text" readonly class="form-control-plaintext" id="staticPrograma" value="">
                 </div>
             </div>
-            <hr>
+            <hr> -->
+
+            <div class="tres">
+                <table>
+                    <tr>
+                        <td>Nombre del grupo de investigacion:</td>
+                        <td><input type="text" readonly class="form-control-plaintext" id="staticNombreI" value=""></td>
+                    </tr>
+                   
+                </table>
+            </div>
     
-            <div class="form-group row">
+            <!-- <div class="form-group row">
                 <label for="staticNombreI" class="col-sm-2 col-form-label">Nombre del grupo de investigacion:</label>
                 <div class="col-sm-10">
                     <input type="text" readonly class="form-control-plaintext" id="staticNombreI" value="">
                 </div>
             </div>
-            <hr>
+            <hr> -->
+
+            <div class="dos">
+                <div class="dos_1">
+                    <table>
+                        <tr>
+                            <td>Nombre del semillero:</td>
+                            <td> <input type="text" readonly class="form-control-plaintext" id="staticNombreS" value=""></td>
+                        </tr>
+                       
+                    </table>
+                </div>
     
-            <form>
+                <div class="dos_2">
+                    <table>
+                        <tr>
+                            <td>Periodo Académico</td>
+                            <td contenteditable="true"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    
+            <!-- <form>
                 <div class="form-group row">
                     <label for="staticNombreS" class="col-sm-2 col-form-label">Nombre del semillero:</label>
                     <div class="col-sm-4">
@@ -71,9 +135,23 @@
                     </div>
                 </div>
             </form>
-            <hr>
+            <hr> -->
+
+            <div class="tres">
+                <table>
+                    <tr>
+                        <td>Docente lider del semillero:</td>
+                        <td><input type="text" readonly class="form-control-plaintext" id="staticDocenteL" value=""></td>
+                    </tr>
+                    <tr>
+                        <td>Línea de investigación institucional,<br> de faculad y de programa:</td>
+                        <td><input type="text" readonly class="form-control-plaintext" id="staticLineaI" value=""></td>
+                    </tr>
+                    
+                </table>
+            </div>
     
-            <div class="form-group row">
+            <!-- <div class="form-group row">
                 <label for="staticDocenteL" class="col-sm-2 col-form-label">Docente lider del semillero:</label>
                 <div class="col-sm-10">
                     <input type="text" readonly class="form-control-plaintext" id="staticDocenteL" value="">
@@ -88,9 +166,30 @@
                 </div>
             </div>
     
-            <hr>
+            <hr> -->
+
+            <div class="dos">
+                <div class="dos_1">
+                    <table>
+                        <tr>
+                            <td>Categoría Colciencias del grupo de investigación:</td>
+                            <td><input type="text" readonly class="form-control-plaintext" id="staticCategoriaC" value=""></td>
+                        </tr>
+                       
+                    </table>
+                </div>
     
-            <form>
+                <div class="dos_2">
+                    <table>
+                        <tr>
+                            <td>Código Colciencias:</td>
+                            <td><input type="text" readonly class="form-control-plaintext" id="staticCodigoCol" value=""></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    
+            <!-- <form>
                 <div class="form-group row">
                     <label for="staticCategoriaC" class="col-sm-2 col-form-label">Categoria Colciencias:</label>
                     <div class="col-sm-4">
@@ -102,7 +201,7 @@
                     </div>
                 </div>
             </form>
-            <hr>
+            <hr> -->
     
             <div class="container">
                 <label for="presentacionInforme" class="centrar-texto negrita">PRESENTACIÓN DE INFORME DE RESULTADOS (USO EXCLUSIVO DEL GRUPO DE INVESTIGACIÓN)</label>
@@ -360,7 +459,7 @@
         //Regresar
         document.getElementById("regresar").addEventListener("click", function () {
             // Redirigir a otra página Semilleros HTML
-            window.location.href = '/';
+            window.location.href = '/menu';
         });
 
     </script>

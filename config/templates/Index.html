@@ -8,6 +8,7 @@
     <title>Tabla con Bootstrap</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/lo.js"></script>
 </head>
 
 <body>
@@ -18,13 +19,27 @@
     
     </header>
 
+    <script>
+      function logout() {
+
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
+    window.location.href = "/";
+    }
+    </script>
+
     <ul>
         <div class="palabra"></div>
         <div class="linea"></div>
     </ul>
 
     <div class="container mt-4">
-        <button id="cargarSemilleros" class="btn btn-primary">Consultar </button>
+        <div id="home-container">
+         
+            <button class="logout-button" onclick="logout()">Salir</button>
+            <button id="cargarSemilleros" class="btn btn-primary">Consultar </button>
+        </div>
+        
         <table id="tablaSemilleros" class="table table-striped mt-4">
             <thead>
                 <tr>
